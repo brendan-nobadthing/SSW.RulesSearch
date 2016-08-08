@@ -22,6 +22,11 @@ namespace SSW.RulesSearch.Lucene
     {
         private readonly LuceneSettings _luceneSettings;
 
+        private Directory _directory = null;
+        private Analyzer _analyser = null;
+        private IndexWriter _indexWriter = null;
+
+
         public LuceneContext(LuceneSettings luceneSettings)
         {
             _luceneSettings = luceneSettings;
@@ -29,14 +34,13 @@ namespace SSW.RulesSearch.Lucene
             Log.Information("creating Lucene cotext with directory folder {IndexDirectory}",
                 _luceneSettings.IndexDirectory);
 
-            Directory = FSDirectory.Open(_luceneSettings.IndexDirectory);
-            Analyzer = new StandardAnalyzer(Version.LUCENE_30);
-            Writer = new IndexWriter(Directory, Analyzer, IndexWriter.MaxFieldLength.UNLIMITED);
         }
 
-        public Directory Directory { get; set; }
-        public Analyzer Analyzer { get; set; }
-        public IndexWriter Writer { get; set; }
+        public Directory Directory => _directory ?? (_directory = FSDirectory.Open(_luceneSettings.IndexDirectory));
+
+        public Analyzer Analyzer => _analyser ?? (_analyser = new StandardAnalyzer(Version.LUCENE_30));
+
+        public IndexWriter Writer => _indexWriter ?? (_indexWriter = new IndexWriter(Directory, Analyzer, IndexWriter.MaxFieldLength.UNLIMITED));
 
         public IndexSearcher CreateSearcher()
         {
