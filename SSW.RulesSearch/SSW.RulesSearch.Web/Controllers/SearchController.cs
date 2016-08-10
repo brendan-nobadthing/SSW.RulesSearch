@@ -22,7 +22,7 @@ namespace SSW.RulesSearch.Web.Controllers
         // GET: Search
         public ActionResult Index()
         {
-            return Content("Hello World");
+            return View();
         }
 
         public ActionResult Count()

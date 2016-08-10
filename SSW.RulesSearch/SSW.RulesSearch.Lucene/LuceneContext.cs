@@ -31,7 +31,7 @@ namespace SSW.RulesSearch.Lucene
         {
             _luceneSettings = luceneSettings;
 
-            Log.Information("creating Lucene cotext with directory folder {IndexDirectory}",
+            Log.Information("creating Lucene context with directory folder {IndexDirectory}",
                 _luceneSettings.IndexDirectory);
 
         }
