@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HtmlAgilityPack;
 using Lucene.Net.Documents;
 using SSW.RulesSearch.Models;
 
@@ -16,8 +17,8 @@ namespace SSW.RulesSearch.Lucene
 
             doc.Add(new Field("Id", model.Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
             doc.Add(new Field("Title", model.Title ?? "", Field.Store.YES, Field.Index.ANALYZED));
-            doc.Add(new Field("RuleContentTop", model.RuleContentTop ?? "", Field.Store.YES, Field.Index.ANALYZED));
-            doc.Add(new Field("PublishingPageContent", model.PublishingPageContent, Field.Store.YES, Field.Index.ANALYZED));
+            doc.Add(new Field("RuleContentTop", model.RuleContentTop?.StripHtml() ?? "", Field.Store.YES, Field.Index.ANALYZED));
+            doc.Add(new Field("PublishingPageContent", model.PublishingPageContent.StripHtml(), Field.Store.YES, Field.Index.ANALYZED));
 
             if (model.RulesKeyWords != null)
             {
@@ -62,4 +63,18 @@ namespace SSW.RulesSearch.Lucene
             return model.Id;
         }
     }
+
+
+    public static class Extensions
+    {
+
+        public static string StripHtml(this string html)
+        {
+            HtmlDocument doc = new HtmlDocument();
+            doc.LoadHtml($"<body>{html}</body>");
+            return doc.DocumentNode.SelectSingleNode("//body").InnerText;
+        }
+
+    }
+
 }

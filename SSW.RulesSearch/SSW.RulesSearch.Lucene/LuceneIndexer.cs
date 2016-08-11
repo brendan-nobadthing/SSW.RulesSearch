@@ -39,6 +39,7 @@ namespace SSW.RulesSearch.Lucene
         public void Index(T model)
         {
             Remove(model);
+            Log.Debug("adding item to index {id} ", _documentBuilder.ToKey(model));
             _luceneContext.Writer.AddDocument(_documentBuilder.ToDocument(model));
         }
 

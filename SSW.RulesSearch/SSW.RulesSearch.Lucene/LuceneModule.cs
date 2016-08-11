@@ -31,6 +31,10 @@ namespace SSW.RulesSearch.Lucene
             builder.RegisterGeneric(typeof(LuceneIndexer<>)).As(typeof(IIndexer<>));
             builder.RegisterType<RuleDocumentBuilder>().As<IDocumentBuilder<Rule>>();
 
+            builder.RegisterType<SimpleTextSearch>()
+                .AsSelf()
+                .AsImplementedInterfaces();
+
         }
     }
 }
