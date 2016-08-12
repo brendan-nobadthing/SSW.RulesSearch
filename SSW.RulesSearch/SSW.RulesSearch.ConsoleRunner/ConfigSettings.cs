@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SSW.RulesSearchService
+﻿namespace SSW.RulesSearch.ConsoleRunner
 {
     public static class ConfigSettings
     {
@@ -14,5 +8,7 @@ namespace SSW.RulesSearchService
         public static string RulesIndexPath => System.Configuration.ConfigurationManager.AppSettings["RulesIndexPath"];
 
         public static string SharePointUrl => System.Configuration.ConfigurationManager.AppSettings["SharePointUrl"];
+
+        public static string ElasticSearchUrl => System.Configuration.ConfigurationManager.AppSettings["ElasticSearchUrl"];
     }
 }

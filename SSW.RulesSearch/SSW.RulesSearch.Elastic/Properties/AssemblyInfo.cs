@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SSW.RulesSearchService")]
+[assembly: AssemblyTitle("SSW.RulesSearch.Elastic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SSW.RulesSearchService")]
+[assembly: AssemblyProduct("SSW.RulesSearch.Elastic")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a86d243a-4028-4ac6-bf58-e9418eb5692d")]
+[assembly: Guid("d97ad6aa-be3e-4d95-9de2-357329bf46f5")]
 
 // Version information for an assembly consists of the following four values:
 //

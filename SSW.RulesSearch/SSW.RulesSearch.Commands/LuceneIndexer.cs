@@ -11,13 +11,13 @@ using SSW.RulesSearch.Models;
 
 namespace SSW.RulesSearch.Commands
 {
-    public class IndexAllRules
+    public class LuceneIndexer : ICommand
     {
 
         private readonly IIndexer<Rule> _ruleIndexer;
         private readonly IRulesDataSource _rulesDataSource;
 
-        public IndexAllRules(IIndexer<Rule> ruleIndexer, 
+        public LuceneIndexer(IIndexer<Rule> ruleIndexer, 
             IRulesDataSource rulesDataSource)
         {
             _ruleIndexer = ruleIndexer;

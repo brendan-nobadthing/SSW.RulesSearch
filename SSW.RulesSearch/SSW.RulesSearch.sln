@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.RulesSearchService", "SSW.RulesSearchService\SSW.RulesSearchService.csproj", "{A86D243A-4028-4AC6-BF58-E9418EB5692D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.RulesSearch.Data.SharePoint", "SSW.RulesSearch.Data.SharePoint\SSW.RulesSearch.Data.SharePoint.csproj", "{51C41F87-FEB6-4386-8B6B-6DEDCACED05F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.RulesSearch.Data.SharePoint.IntTests", "SSW.RulesSearch.Data.SharePoint.IntTests\SSW.RulesSearch.Data.SharePoint.IntTests.csproj", "{0F387B32-F1DA-46AD-8BCF-B8FF81ADF3AA}"
@@ -19,16 +17,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.RulesSearch.Web", "SSW.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.RulesSearch.Lucene.IntTests", "SSW.RulesSearch.Lucene.IntTests\SSW.RulesSearch.Lucene.IntTests.csproj", "{32A5CD9A-6E8E-4043-BC3B-D84CF2E815B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.RulesSearch.ConsoleRunner", "SSW.RulesSearch.ConsoleRunner\SSW.RulesSearch.ConsoleRunner.csproj", "{D0A447E5-F2B7-4C8E-B4F2-103D403D0D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.RulesSearch.Elastic", "SSW.RulesSearch.Elastic\SSW.RulesSearch.Elastic.csproj", "{D97AD6AA-BE3E-4D95-9DE2-357329BF46F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A86D243A-4028-4AC6-BF58-E9418EB5692D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A86D243A-4028-4AC6-BF58-E9418EB5692D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A86D243A-4028-4AC6-BF58-E9418EB5692D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A86D243A-4028-4AC6-BF58-E9418EB5692D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51C41F87-FEB6-4386-8B6B-6DEDCACED05F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{51C41F87-FEB6-4386-8B6B-6DEDCACED05F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51C41F87-FEB6-4386-8B6B-6DEDCACED05F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +55,14 @@ Global
 		{32A5CD9A-6E8E-4043-BC3B-D84CF2E815B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32A5CD9A-6E8E-4043-BC3B-D84CF2E815B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32A5CD9A-6E8E-4043-BC3B-D84CF2E815B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A447E5-F2B7-4C8E-B4F2-103D403D0D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A447E5-F2B7-4C8E-B4F2-103D403D0D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A447E5-F2B7-4C8E-B4F2-103D403D0D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A447E5-F2B7-4C8E-B4F2-103D403D0D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D97AD6AA-BE3E-4D95-9DE2-357329BF46F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D97AD6AA-BE3E-4D95-9DE2-357329BF46F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D97AD6AA-BE3E-4D95-9DE2-357329BF46F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D97AD6AA-BE3E-4D95-9DE2-357329BF46F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

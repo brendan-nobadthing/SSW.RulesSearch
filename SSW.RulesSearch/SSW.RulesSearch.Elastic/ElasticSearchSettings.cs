@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SSW.RulesSearchService
+namespace SSW.RulesSearch.Elastic
 {
-    class Startup
+    public class ElasticSearchSettings
     {
+        public string Url { get; set; }
+
     }
 }

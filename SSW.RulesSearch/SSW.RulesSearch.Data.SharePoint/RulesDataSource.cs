@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Serilog;
 using SSW.RulesSearch.Models;
 
 namespace SSW.RulesSearch.Data.SharePoint
@@ -30,7 +31,7 @@ namespace SSW.RulesSearch.Data.SharePoint
 
         public IEnumerable<Rule> GetAllRules()
         {
-
+            Log.Information("Fetching rules from {url}", _sharePointClientConfig.Url);
             var response = this.HttpClient.GetStringAsync(_sharePointClientConfig.Url + "/_api/web/lists/getByTitle('Pages')/items?$top=5000")
                 .GetAwaiter()
                 .GetResult();

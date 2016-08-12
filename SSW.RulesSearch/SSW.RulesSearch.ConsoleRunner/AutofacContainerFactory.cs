@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using Autofac;
 using SSW.RulesSearch.Commands;
 using SSW.RulesSearch.Data.SharePoint;
+using SSW.RulesSearch.Elastic;
 using SSW.RulesSearch.Lucene;
 
-namespace SSW.RulesSearchService
+namespace SSW.RulesSearch.ConsoleRunner
 {
-    public static class SearchServiceContainerFactory
+    public static class AutofacContainerFactory
     {
 
         public static IContainer CreateContainer()
@@ -27,10 +28,22 @@ namespace SSW.RulesSearchService
                 Url = ConfigSettings.SharePointUrl
             }));
 
-            builder.RegisterType<IndexAllRules>().AsSelf();
+            builder.RegisterModule(new ElasticSearchModule(new ElasticSearchSettings()
+            {
+                Url = ConfigSettings.ElasticSearchUrl
+            }));
+
+            builder.RegisterType<LuceneIndexer>()
+                .Named<ICommand>(typeof(LuceneIndexer).Name)
+                .As<ICommand>();
+
+            builder.RegisterType<NestIndexer>()
+               .Named<ICommand>(typeof(NestIndexer).Name)
+               .As<ICommand>();
+
+
 
             return builder.Build();
         }
-
     }
 }

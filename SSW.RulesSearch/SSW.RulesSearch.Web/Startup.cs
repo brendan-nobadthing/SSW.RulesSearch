@@ -41,7 +41,7 @@ namespace SSW.RulesSearch.Web
                 Url = ConfigSettings.SharePointUrl
             }));
 
-            builder.RegisterType<IndexAllRules>().AsSelf();
+            builder.RegisterType<LuceneIndexer>().AsSelf();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

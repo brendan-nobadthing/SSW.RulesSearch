@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SSW.RulesSearch.Domain")]
+[assembly: AssemblyTitle("SSW.RulesSearch.NestIndexer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SSW.RulesSearch.Domain")]
+[assembly: AssemblyProduct("SSW.RulesSearch.NestIndexer")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8bc345ea-bfb4-4e00-a8d4-9d4bf2ba0772")]
+[assembly: Guid("104bca94-759b-4737-a733-a6052655ea61")]
 
 // Version information for an assembly consists of the following four values:
 //
