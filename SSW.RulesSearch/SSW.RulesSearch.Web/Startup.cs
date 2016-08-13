@@ -31,17 +31,7 @@ namespace SSW.RulesSearch.Web
             // Register your MVC controllers.
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
-            builder.RegisterModule(new LuceneModule(new LuceneSettings()
-            {
-                IndexDirectory = ConfigSettings.RulesIndexPath
-            }));
-
-            builder.RegisterModule(new SharePointModule(new SharePointClientConfig()
-            {
-                Url = ConfigSettings.SharePointUrl
-            }));
-
-            builder.RegisterType<LuceneIndexer>().AsSelf();
+            builder.RegisterModule<RulesSearchWebModule>();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

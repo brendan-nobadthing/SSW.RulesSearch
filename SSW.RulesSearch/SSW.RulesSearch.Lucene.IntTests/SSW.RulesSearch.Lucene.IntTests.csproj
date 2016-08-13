@@ -82,13 +82,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SSW.RulesSearch.Domain\SSW.RulesSearch.Domain.csproj">
+      <Project>{c0b0421f-6cd7-424a-9c5a-589c4584dc9a}</Project>
+      <Name>SSW.RulesSearch.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SSW.RulesSearch.Lucene\SSW.RulesSearch.Lucene.csproj">
       <Project>{1ec7336f-c0c0-4d79-a732-b434f9ff8e63}</Project>
       <Name>SSW.RulesSearch.Lucene</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SSW.RulesSearch.Models\SSW.RulesSearch.Models.csproj">
-      <Project>{6a9de819-c9b7-4e93-bdb0-90b4e5f6ab40}</Project>
-      <Name>SSW.RulesSearch.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

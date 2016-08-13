@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
-using SSW.RulesSearch.Models;
+using SSW.RulesSearch.Domain;
 using Xunit;
 using Version = Lucene.Net.Util.Version;
 

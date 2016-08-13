@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SSW.RulesSearch.Lucene;
-using SSW.RulesSearch.Models;
+using SSW.RulesSearch.Domain;
 
 namespace SSW.RulesSearch.Web.Controllers
 {

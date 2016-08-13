@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Serilog;
 using SSW.RulesSearch.Data.SharePoint;
 using SSW.RulesSearch.Lucene;
-using SSW.RulesSearch.Models;
+using SSW.RulesSearch.Domain;
 
 namespace SSW.RulesSearch.Commands
 {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Serilog;
-using SSW.RulesSearch.Models;
+using SSW.RulesSearch.Domain;
 
 namespace SSW.RulesSearch.Data.SharePoint
 {

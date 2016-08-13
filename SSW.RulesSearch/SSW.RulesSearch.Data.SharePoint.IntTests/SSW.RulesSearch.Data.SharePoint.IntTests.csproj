@@ -10,10 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SSW.RulesSearch.Data.SharePoint.IntTests</RootNamespace>
     <AssemblyName>SSW.RulesSearch.Data.SharePoint.IntTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,9 +79,9 @@
       <Project>{51c41f87-feb6-4386-8b6b-6dedcaced05f}</Project>
       <Name>SSW.RulesSearch.Data.SharePoint</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SSW.RulesSearch.Models\SSW.RulesSearch.Models.csproj">
-      <Project>{6a9de819-c9b7-4e93-bdb0-90b4e5f6ab40}</Project>
-      <Name>SSW.RulesSearch.Models</Name>
+    <ProjectReference Include="..\SSW.RulesSearch.Domain\SSW.RulesSearch.Domain.csproj">
+      <Project>{c0b0421f-6cd7-424a-9c5a-589c4584dc9a}</Project>
+      <Name>SSW.RulesSearch.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

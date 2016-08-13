@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SSW.RulesSearch.Commands</RootNamespace>
     <AssemblyName>SSW.RulesSearch.Commands</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,11 +32,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Elasticsearch.Net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
-      <HintPath>..\packages\Elasticsearch.Net.2.4.3\lib\net45\Elasticsearch.Net.dll</HintPath>
+      <HintPath>..\packages\Elasticsearch.Net.2.4.3\lib\net46\Elasticsearch.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Nest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
-      <HintPath>..\packages\NEST.2.4.3\lib\net45\Nest.dll</HintPath>
+      <HintPath>..\packages\NEST.2.4.3\lib\net46\Nest.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -43,7 +44,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.2.0.0\lib\net45\Serilog.dll</HintPath>
+      <HintPath>..\packages\Serilog.2.1.0\lib\net45\Serilog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -69,13 +70,13 @@
       <Project>{51c41f87-feb6-4386-8b6b-6dedcaced05f}</Project>
       <Name>SSW.RulesSearch.Data.SharePoint</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SSW.RulesSearch.Domain\SSW.RulesSearch.Domain.csproj">
+      <Project>{c0b0421f-6cd7-424a-9c5a-589c4584dc9a}</Project>
+      <Name>SSW.RulesSearch.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SSW.RulesSearch.Lucene\SSW.RulesSearch.Lucene.csproj">
       <Project>{1ec7336f-c0c0-4d79-a732-b434f9ff8e63}</Project>
       <Name>SSW.RulesSearch.Lucene</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SSW.RulesSearch.Models\SSW.RulesSearch.Models.csproj">
-      <Project>{6a9de819-c9b7-4e93-bdb0-90b4e5f6ab40}</Project>
-      <Name>SSW.RulesSearch.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -8,16 +8,11 @@ using Lucene.Net.Documents;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
 using Lucene.Net.Search.Highlight;
-using SSW.RulesSearch.Models;
+using SSW.RulesSearch.Domain;
 using Version = Lucene.Net.Util.Version;
 
 namespace SSW.RulesSearch.Lucene
 {
-    public interface ITextSearch
-    {
-        IEnumerable<RuleSearchResult> Search(string query);
-    }
-
     public class SimpleTextSearch : ITextSearch
     {
         private readonly LuceneContext _luceneContext;

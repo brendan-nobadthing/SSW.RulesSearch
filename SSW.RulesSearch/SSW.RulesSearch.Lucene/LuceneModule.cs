@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
-using SSW.RulesSearch.Models;
+using SSW.RulesSearch.Domain;
 
 namespace SSW.RulesSearch.Lucene
 {
@@ -31,9 +31,7 @@ namespace SSW.RulesSearch.Lucene
             builder.RegisterGeneric(typeof(LuceneIndexer<>)).As(typeof(IIndexer<>));
             builder.RegisterType<RuleDocumentBuilder>().As<IDocumentBuilder<Rule>>();
 
-            builder.RegisterType<SimpleTextSearch>()
-                .AsSelf()
-                .AsImplementedInterfaces();
+           
 
         }
     }
