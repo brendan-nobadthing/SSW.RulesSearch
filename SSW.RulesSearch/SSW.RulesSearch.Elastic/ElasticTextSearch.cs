@@ -24,10 +24,8 @@ namespace SSW.RulesSearch.Elastic
             var results = _elasticClient.Search<Rule>(s => s
                 .From(0)
                 .Size(20)
-
-                .Query(q => q.QueryString(qs => qs.Query(query)))
-                //.Query(q => q.Term(t => t.PublishingPageContent, query))
-
+                //.Query(q => q.QueryString(qs => qs.Query(query)))
+                .Query(q => q.Term(t => t.PublishingPageContent, query))
                 .Highlight(h => h
                     .PreTags("<b style='color:red'>")
                     .PostTags("</b>")
@@ -40,14 +38,12 @@ namespace SSW.RulesSearch.Elastic
                     
                 )
             );
-
             return results.Hits.Select(hit => new RuleSearchResult()
             {
                 Rule = hit.Source,
                 Score = hit.Score,
                 Context = string.Join("...", hit.Highlights.SelectMany(h => h.Value.Highlights))
             });
-
         }
     }
 }

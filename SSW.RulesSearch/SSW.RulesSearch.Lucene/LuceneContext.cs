@@ -40,7 +40,8 @@ namespace SSW.RulesSearch.Lucene
 
         public Analyzer Analyzer => _analyser ?? (_analyser = new StandardAnalyzer(Version.LUCENE_30));
 
-        public IndexWriter Writer => _indexWriter ?? (_indexWriter = new IndexWriter(Directory, Analyzer, IndexWriter.MaxFieldLength.UNLIMITED));
+        public IndexWriter Writer => _indexWriter ?? (_indexWriter = 
+            new IndexWriter(Directory, Analyzer, IndexWriter.MaxFieldLength.UNLIMITED));
 
         public IndexSearcher CreateSearcher()
         {

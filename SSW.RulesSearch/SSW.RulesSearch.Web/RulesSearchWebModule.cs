@@ -30,13 +30,13 @@ namespace SSW.RulesSearch.Web
             }));
 
 
-            builder.RegisterType<SimpleTextSearch>()
-               .AsSelf()
-               .AsImplementedInterfaces();
+           // builder.RegisterType<SimpleTextSearch>()
+            //   .AsSelf()
+            //   .AsImplementedInterfaces();
 
-            //builder.RegisterType<ElasticTextSearch>()
-            //    .AsSelf()
-            //    .AsImplementedInterfaces();
+            builder.RegisterType<ElasticTextSearch>()
+                .AsSelf()
+               .AsImplementedInterfaces();
         }
     }
 }

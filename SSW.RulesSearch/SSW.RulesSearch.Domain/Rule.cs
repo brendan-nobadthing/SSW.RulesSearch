@@ -5,21 +5,13 @@ namespace SSW.RulesSearch.Domain
     public class Rule
     {
         public int Id { get; set; }
-
         public string Title { get; set; }
-
         public PublishingPageLayout PublishingPageLayout { get; set; }
-
         public string PublishingPageContent { get; set; }
-
         public string RuleContentTop { get; set; }
-
         public DateTime? Created { get; set; }
-
         public DateTime? Modified { get; set; }
-
         public string RulesKeyWords { get; set; }
-
         public RuleCategoriesMetadata[] RuleCategoriesMetadata { get; set; }
     }
 

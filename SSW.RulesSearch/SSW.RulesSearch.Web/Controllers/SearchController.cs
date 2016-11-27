@@ -11,7 +11,6 @@ namespace SSW.RulesSearch.Web.Controllers
 {
     public class SearchController : Controller
     {
-
         private readonly IIndexer<Rule> _ruleIndexer;
         private readonly ITextSearch _textSearch;
 
@@ -26,16 +25,16 @@ namespace SSW.RulesSearch.Web.Controllers
         {
             return View();
         }
-
-        public ActionResult Count()
-        {
-            return Content(_ruleIndexer.GetItemCount().ToString());
-        }
-
+        
         public ActionResult Search(string query)
         {
             var searchResults = _textSearch.Search(query);
             return PartialView("_SearchResults", searchResults);
+        }
+
+        public ActionResult Count()
+        {
+            return Content(_ruleIndexer.GetItemCount().ToString());
         }
     }
 }

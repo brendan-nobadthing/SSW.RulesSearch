@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Lucene.Net.Documents;
-using Lucene.Net.Index;
+﻿using Lucene.Net.Index;
 using Serilog;
 
 namespace SSW.RulesSearch.Lucene
@@ -25,6 +19,7 @@ namespace SSW.RulesSearch.Lucene
 
     }
 
+    // ReSharper disable once ClassWithVirtualMembersNeverInherited.Global
     public class LuceneIndexer<T> : IIndexer<T> where T : class
     {   
         private readonly LuceneContext _luceneContext;
@@ -52,11 +47,9 @@ namespace SSW.RulesSearch.Lucene
         {
             using (var indexReader = IndexReader.Open(_luceneContext.Directory, false))
             {
-                if (indexReader.TermDocs(new Term(_documentBuilder.KeyField, id.ToString())).Next())
-                {
-                    Log.Debug("removing item from index {id} ", id);
-                    _luceneContext.Writer.DeleteDocuments(new Term(_documentBuilder.KeyField, id.ToString()));
-                }
+                if (!indexReader.TermDocs(new Term(_documentBuilder.KeyField, id.ToString())).Next()) return;
+                Log.Debug("removing item from index {id} ", id);
+                _luceneContext.Writer.DeleteDocuments(new Term(_documentBuilder.KeyField, id.ToString()));
             }
         }
 

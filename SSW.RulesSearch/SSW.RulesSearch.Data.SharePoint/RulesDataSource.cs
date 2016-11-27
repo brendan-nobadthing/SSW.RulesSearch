@@ -32,13 +32,15 @@ namespace SSW.RulesSearch.Data.SharePoint
         public IEnumerable<Rule> GetAllRules()
         {
             Log.Information("Fetching rules from {url}", _sharePointClientConfig.Url);
-            var response = this.HttpClient.GetStringAsync(_sharePointClientConfig.Url + "/_api/web/lists/getByTitle('Pages')/items?$top=5000")
+            var response = this.HttpClient.GetStringAsync(
+                _sharePointClientConfig.Url + "/_api/web/lists/getByTitle('Pages')/items?$top=5000")
+                //_sharePointClientConfig.Url + "/_api/web/lists/getByTitle('Pages')/items?$top=100")
                 .GetAwaiter()
                 .GetResult();
 
-            JObject jobject = JObject.Parse(response);
+            var jobject = JObject.Parse(response);
             var rules = JsonConvert.DeserializeObject<IEnumerable<Rule>>(jobject["value"].ToString());
-            return rules.Where(r => r.PublishingPageLayout.Url.Contains("_catalogs/masterpage/SSW.RulePageLayout.aspx") 
+            return rules.Where(r => r.PublishingPageLayout.Url.Contains("_catalogs/masterpage/SSW.RulePageLayout.aspx")
                 && r.PublishingPageContent != null
            );
         }
